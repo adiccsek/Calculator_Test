@@ -19,15 +19,11 @@ def test_calculateMultiply():
     assert calculateMultiply(2, -3) == -6
     assert calculateMultiply(-2, -3) == 6
     assert calculateMultiply(0, 0) == 0
-
 def test_calculateDivision():
-    assert calculateDivision(2, 3) == 2/3
-    assert calculateDivision(2, -3) == 2/-3
-    assert calculateDivision(-2, -3) == -2/-3
-    try :
-        calculateDivision(0, 0)
-    except ZeroDivisionError:
-        pass
 
+    assert calculateDivision(2, 3) == pytest.approx(2/3)
+    assert calculateDivision(2, -3) == pytest.approx(2/-3)
+    assert calculateDivision(-2, -3) == pytest.approx(-2/-3)
+    assert calculateDivision(0, 0) == "Division by zero is not allowed"
 
 
